@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://gwc5k3yr7qtp"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_3ouqi"]
+[ext_resource type="PackedScene" uid="uid://dyl61cagvobis" path="res://Scenes/house.tscn" id="1_7unq6"]
+[ext_resource type="PackedScene" uid="uid://02ba8lyt6gum" path="res://Scenes/zombie.tscn" id="3_0yl2p"]
+[ext_resource type="Script" path="res://Scripts/zombie.gd" id="4_alspm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wn86i"]
+radius = 14.0
+
+[node name="Main" type="Node2D"]
+
+[node name="House" parent="." instance=ExtResource("1_7unq6")]
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+z_index = 10
+position = Vector2(450, 325)
+script = ExtResource("1_3ouqi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_wn86i")
+
+[node name="Polygon2D" type="Polygon2D" parent="Player"]
+color = Color(0.358341, 0.849624, 1, 1)
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Zombie" parent="." groups=["zombies"] instance=ExtResource("3_0yl2p")]
+position = Vector2(125, 199)
+script = ExtResource("4_alspm")

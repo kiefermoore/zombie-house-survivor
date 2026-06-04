@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyl61cagvobis"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yu26"]
+size = Vector2(700, 32)
+
+[node name="House" type="Node2D"]
+
+[node name="floor" type="Polygon2D" parent="."]
+z_index = -10
+color = Color(0.237539, 0.237539, 0.237539, 1)
+polygon = PackedVector2Array(100, 100, 800, 100, 798, 1086, 446, 1084, 104, 1084)
+
+[node name="Wall_Top" type="StaticBody2D" parent="."]
+position = Vector2(100, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Top"]
+position = Vector2(350, 16)
+shape = SubResource("RectangleShape2D_5yu26")
+
+[node name="Polygon2D" type="Polygon2D" parent="Wall_Top"]
+color = Color(0.646029, 0.646029, 0.646029, 1)
+polygon = PackedVector2Array(0, 0, 700, 0, 700, 32, 0, 32)
+
+[node name="WallLeft" type="StaticBody2D" parent="."]
+position = Vector2(102, 1077)
+rotation = -1.57223
+scale = Vector2(1.36167, 1.52341)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
+position = Vector2(350, 16)
+shape = SubResource("RectangleShape2D_5yu26")
+
+[node name="Polygon2D" type="Polygon2D" parent="WallLeft"]
+color = Color(0.646029, 0.646029, 0.646029, 1)
+polygon = PackedVector2Array(0, 0, 700, 0, 700, 32, 0, 32)
+
+[node name="WallRight" type="StaticBody2D" parent="."]
+position = Vector2(752, 1083)
+rotation = -1.57223
+scale = Vector2(1.36167, 1.52341)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
+position = Vector2(350, 16)
+shape = SubResource("RectangleShape2D_5yu26")
+
+[node name="Polygon2D" type="Polygon2D" parent="WallRight"]
+color = Color(0.646029, 0.646029, 0.646029, 1)
+polygon = PackedVector2Array(0, 0, 700, 0, 700, 32, 0, 32)
+
+[node name="WallBottom" type="StaticBody2D" parent="."]
+position = Vector2(100, 1051)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom"]
+position = Vector2(350, 16)
+shape = SubResource("RectangleShape2D_5yu26")
+
+[node name="Polygon2D" type="Polygon2D" parent="WallBottom"]
+color = Color(0.646029, 0.646029, 0.646029, 1)
+polygon = PackedVector2Array(0, 0, 700, 0, 700, 32, 0, 32)
